@@ -8,6 +8,8 @@
 * 一个域名（可选）
 * 下载ffmpeg软件
 
+## 如果你不想自己搭建也可以私信我，把我的机器人拉进群聊
+
 ## QuickStart
 
 <!-- add docs here for user -->
