@@ -1,6 +1,12 @@
-# home
+# 一个同步电报频道消息到QQ群的机器人
+* QQ基于[oicq][oicq]实现，支持最低node版本为 v14
+* 电报基于[GramJS][GramJS]实现
 
-
+# 部署这个机器人你需要准备什么？
+* 一台能访问到外网的电脑或者服务器
+* 至少一个月亮的QQ号
+* 一个域名（可选）
+* 下载ffmpeg软件
 
 ## QuickStart
 
@@ -31,3 +37,5 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
+[oicq]: https://github.com/takayama-lily/oicq
+[GramJS]: https://github.com/gram-js/gramjs
