@@ -1,0 +1,67 @@
+{
+  "name": "home",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "await-stream-ready": "^1.0.1",
+    "cos-nodejs-sdk-v5": "^2.11.12",
+    "dayjs": "^1.11.6",
+    "egg": "^2",
+    "egg-cors": "^2.2.3",
+    "egg-router-plus": "^2.0.0",
+    "egg-scripts": "^2",
+    "egg-sequelize": "^6.0.0",
+    "fetch": "^1.1.0",
+    "ffmpeg": "0.0.4",
+    "ffprobe": "^1.1.2",
+    "input": "^1.0.1",
+    "inquirer": "^7.0.0",
+    "lodash": "^4.17.21",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^2.6.7",
+    "oicq": "^2.3.1",
+    "oicq-guild": "^0.1.0",
+    "qq-guild-bot": "^2.9.5",
+    "sequelize": "^6.21.3",
+    "sequelize-cli": "^6.4.1",
+    "telegram": "^2.13.6"
+  },
+  "devDependencies": {
+    "autod": "^3",
+    "autod-egg": "^1",
+    "egg-bin": "^4",
+    "egg-ci": "^2",
+    "egg-mock": "^4",
+    "eslint": "^8",
+    "eslint-config-egg": "^12"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-home",
+    "stop": "egg-scripts stop --title=egg-server-home",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "16",
+    "type": "github"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "misaki",
+  "license": "MIT"
+}
