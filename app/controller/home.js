@@ -23,7 +23,7 @@ class HomeController extends Controller {
     ctx.status = 200;
   }
   async telegram() {
-    const { ctx, service, config: { telegram: { apiId, apiHash, token } } } = this;
+    const { ctx, service, config: { telegram: { apiId, apiHash, token },channels } } = this;
     const session = new StringSession(token); // You should put your string session here
     const client = new TelegramClient(session, apiId, apiHash, {});
     // await client.start({
@@ -36,22 +36,9 @@ class HomeController extends Controller {
     console.log(client.session.save()); // Save this string to avoid logging in again
 
     //要监视下载的频道,键名无实际作用
-    const channel = [
-      // {
-      //   name: "每日傻雕墙",
-      //   id: -1001341930464
-      // }
-      // {
-      //   name: '心惊报',
-      //   id: -1001434817225
-      // },
-      {
-        name: "奇闻异录与沙雕时刻",
-        id: -1001214996122
-      }]
     const result = await client.invoke(
       new Api.channels.GetChannels({
-        id: channel.map(v => v.id)
+        id: channels.map(v => v.id)
       })
     );
     client.addEventHandler(async ({ message }) => {
@@ -87,7 +74,7 @@ class HomeController extends Controller {
     //在线
     app.client.on("system.online", async () => {
       console.log('QQ启动成功!');
-      await this.QQbot();
+      await this.QQbot();//QQ频道bot，用不到可以注释掉
       await this.telegram();
     })
     //扫码登录

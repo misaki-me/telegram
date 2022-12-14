@@ -45,7 +45,7 @@ module.exports = appInfo => {
   }
   config.cluster = {
     listen: {
-      port: 7009,
+      port: 7009,//端口
       hostname: '127.0.0.1',
     },
   };
@@ -55,34 +55,46 @@ module.exports = appInfo => {
     allowMethods: 'GET,PUT,POST,DELETE,PATCH',
   };
   // add your user config here
-  config.groupIDs = [
-  ];
-  config.QQbot = {
+  config.groupIDs = [];//QQ群id集合
+  config.QQbot = {//QQ频道bot，用不到可以注释掉
     appID: '', // 申请机器人时获取到的机器人 BotAppID
     token: '', // 申请机器人时获取到的机器人 BotToken
     intents: ['GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES', 'GUILD_MESSAGE_REACTIONS', 'DIRECT_MESSAGE', 'INTERACTION', 'MESSAGE_AUDIT', 'FORUMS_EVENT', 'AUDIO_ACTION', 'PUBLIC_GUILD_MESSAGES'], // 事件订阅,用于开启可接收的消息类型
     sandbox: false, // 沙箱支持，可选，默认false. v2.7.0+
   }
-  config.v2Ray='';
-  config.guild = {
+  config.v2Ray = '';//代理配置
+  config.guild = {//QQ频道
     id: '',
     channelId: ''
   }
-  config.telegram = {
+  config.telegram = {//电报机器人参数
     apiId: "",
     apiHash: "",
     token: ""
   }
-  config.QQaccount = {
+  config.QQaccount = {//QQ账号
     account: "",
     password: ''
   }
-  config.multipart = {
+  config.channels = [
+    // {
+    //   name: "每日傻雕墙",
+    //   id: -1001341930464
+    // }
+    // {
+    //   name: '心惊报',
+    //   id: -1001434817225
+    // },
+    {
+      name: "奇闻异录与沙雕时刻",
+      id: -1001214996122
+    }]
+  config.multipart = {//上传配置
     fileSize: '5mb',
     mode: 'stream',
     fileExtensions: ['.jpg', '.JPG', '.png', '.PNG', '.gif', '.GIF', '.jpeg', '.JPEG', '.webp'], // 扩展几种上传的文件格式
   };
-  config.sequelize = {
+  config.sequelize = {//mysql插件，与本项目无关
     dialect: 'mysql',
     host: '',
     username: '',
